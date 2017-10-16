@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ColorReact</string>
+    <string name="play_game_label">Play Game</string>
+    <string name="settings_label">Settings</string>
+    <string name="high_scores_label">High Scores</string>
+
+</resources>
