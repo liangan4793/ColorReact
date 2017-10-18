@@ -1,42 +1,30 @@
 package com.example.andy.colorreact;
 
-import android.graphics.Color;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ImageSwitcher;
-import android.widget.ImageView;
+import android.view.View;
+import android.widget.Button;
 
-import java.util.Random;
-import java.util.concurrent.ThreadFactory;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private ImageView mainMenuIcon;
-    private Color colorGenerator;
-    private boolean isActive = false;
-    private int[] colors = new int[] {Color.BLUE, Color.BLACK, Color.GREEN, Color.RED};
+    @BindView(R.id.play_game_button) private Button playGameButton;
+    @BindView(R.id.high_scores_button) private Button highScoreButton;
+    @BindView(R.id.settings_button) private Button settingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-    }
+        ButterKnife.bind(this);
 
-    private void generateRandomColor() {
+        settingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-    }
-
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        isActive = true;
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        isActive = false;
+            }
+        });
     }
 }
