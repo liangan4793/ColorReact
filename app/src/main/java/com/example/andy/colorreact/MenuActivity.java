@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -14,7 +15,7 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        ButterKnife.bind(this);
 
 
     }
