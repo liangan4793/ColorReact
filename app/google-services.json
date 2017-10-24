@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "432071402003",
+    "firebase_url": "https://colorreact-2b0ea.firebaseio.com",
+    "project_id": "colorreact-2b0ea",
+    "storage_bucket": "colorreact-2b0ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432071402003:android:8b1efb8a62c39ded",
+        "android_client_info": {
+          "package_name": "com.example.andy.colorreact"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432071402003-h3msgsd9dtb16cpqpcu7pnim71843vhn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.andy.colorreact",
+            "certificate_hash": "676081f88157cdb9aab30acc7c0917e8a7995346"
+          }
+        },
+        {
+          "client_id": "432071402003-sg0b6rpslbjik3u3ithgisbml1nvnfr0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoSwiL0mMsuOozhZOrRnP4vjxZinh1H-I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432071402003-sg0b6rpslbjik3u3ithgisbml1nvnfr0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
