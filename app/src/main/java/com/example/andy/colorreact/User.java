@@ -10,6 +10,9 @@ public class User {
 
     private String firstName;
     private String lastName;
+    private String userName;
+    private String emailAddress;
+    private String password;
     private int highSchore;
 
     public User() {
@@ -32,5 +35,38 @@ public class User {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setHighSchore(int highSchore) {
+        this.highSchore = highSchore;
+    }
+
+    public String getUserName() {
+
+        return userName;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public int getHighSchore() {
+        return highSchore;
     }
 }

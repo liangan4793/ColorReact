@@ -8,36 +8,47 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="85dp">
+        android:padding="85dp"
+        >
+
         <EditText
+            android:id="@+id/register_fragment_first_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="First Name"
-            android:id="@+id/register_fragment_first_name"/>
+            android:text="First Name" />
+
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Last Name"
             android:id="@+id/register_fragment_last_name"
-            />
-        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Username"
-            android:id="@+id/register_fragment_user_name"/>
+            android:text="Last Name" />
+
         <EditText
+            android:id="@+id/register_fragment_user_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email Adress"
+            android:text="Username" />
+
+        <EditText
             android:id="@+id/register_fragment_email_address"
-            />
-        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Password"
-            android:id="@+id/register_fragment_password"/>
+            android:text="Email Adress" />
+
+        <EditText
+            android:id="@+id/register_fragment_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password" />
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:layout_margin="40dp"
+        android:id="@+id/register_fragment_register_button"/>
 
 </LinearLayout>
