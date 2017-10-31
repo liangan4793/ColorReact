@@ -7,10 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.andy.colorreact.Model.User;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.zip.Inflater;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,7 +17,7 @@ import butterknife.ButterKnife;
 public class MenuActivity extends AppCompatActivity implements RegisterUserDialogFragment.RegisterUserDialogListener {
 
     @BindView(R.id.mainMenuSignInButton) Button signInButton;
-    FirebaseDatabase database;
+    DatabaseReference database;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,10 +39,7 @@ public class MenuActivity extends AppCompatActivity implements RegisterUserDialo
 
     @Override
     public void onRegisterUser(User user) {
-        database = FirebaseDatabase.getInstance();
-        DatabaseReference  users = database.getReference("Users");
-        users.child(user.getUserName());
-        DatabaseReference firstChild = database.getReference(user.getUserName());
-
+        database = FirebaseDatabase.getInstance().getReference();
+        database.child("Users").child(user.getUserName()).setValue(user);
     }
 }

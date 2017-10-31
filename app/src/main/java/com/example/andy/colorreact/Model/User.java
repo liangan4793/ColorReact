@@ -1,4 +1,6 @@
-package com.example.andy.colorreact;
+package com.example.andy.colorreact.Model;
+
+import java.io.Serializable;
 
 import io.realm.RealmObject;
 
@@ -6,7 +8,7 @@ import io.realm.RealmObject;
  * Created by andy on 23/10/17.
  */
 
-public class User {
+public class User implements Serializable {
 
     private String firstName;
     private String lastName;
