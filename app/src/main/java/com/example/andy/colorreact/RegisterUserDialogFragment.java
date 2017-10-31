@@ -28,6 +28,8 @@ public class RegisterUserDialogFragment extends DialogFragment {
 
     private User newUser;
 
+    public RegisterUserDialogFragment() {}
+
     public interface RegisterUserDialogListener {
         void onRegisterUser(User user);
     }
@@ -43,6 +45,8 @@ public class RegisterUserDialogFragment extends DialogFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ButterKnife.bind(this, view);
+        newUser = new User();
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

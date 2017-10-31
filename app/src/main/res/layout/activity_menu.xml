@@ -11,82 +11,65 @@
 
     <Button
         android:id="@+id/play_game_button"
-        style="@android:style/Widget.Material.Light.Button.Borderless.Colored"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginTop="56dp"
         android:elevation="0dp"
         android:text="@string/play_game_label"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#4dcbbf"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        android:layout_marginTop="12dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/high_scores_button"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/high_scores_label"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#4dcbbf"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        android:layout_marginTop="6dp"
-        app:layout_constraintTop_toBottomOf="@+id/play_game_button"
-        tools:layout_constraintRight_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toRightOf="@+id/play_game_button" />
+        app:layout_constraintTop_toBottomOf="@+id/play_game_button" />
 
     <Button
         android:id="@+id/settings_button"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/settings_label"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#4dcbbf"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/high_scores_button"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/high_scores_button" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintStart_toStartOf="@+id/play_game_button"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/mainMenuSignInButton"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:text="@string/app_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#7E9391"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainMenuSignInButton" />
 
     <Button
         android:id="@+id/mainMenuSignInButton"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
+        android:layout_width="88dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
         android:text="Sign In"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="20dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

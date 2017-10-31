@@ -1,6 +1,7 @@
 package com.example.andy.colorreact;
 
 import android.support.annotation.Nullable;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,6 +34,8 @@ public class MenuActivity extends AppCompatActivity implements RegisterUserDialo
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                RegisterUserDialogFragment registerUserDialogFragment = new RegisterUserDialogFragment();
+                registerUserDialogFragment.show(getFragmentManager(), "Register User");
             }
         });
     }
