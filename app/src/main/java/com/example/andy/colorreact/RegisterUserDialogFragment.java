@@ -25,7 +25,6 @@ public class RegisterUserDialogFragment extends DialogFragment {
     @BindView(R.id.register_fragment_email_address)  EditText emailAddress;
     @BindView(R.id.register_fragment_password)  EditText password;
     @BindView(R.id.register_fragment_register_button)  Button registerButton;
-
     private User newUser;
 
     public RegisterUserDialogFragment() {}

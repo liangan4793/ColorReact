@@ -1,10 +1,8 @@
 package com.example.andy.colorreact;
 
-import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -19,6 +17,7 @@ public class MenuActivity extends AppCompatActivity implements RegisterUserDialo
 
     @BindView(R.id.mainMenuSignInButton) Button signInButton;
     DatabaseReference database;
+    User currentUser;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,19 +29,32 @@ public class MenuActivity extends AppCompatActivity implements RegisterUserDialo
         if(savedInstanceState == null) {
             signInButton.setText("Sign In");
         }
+        else {
+            currentUser = (User) savedInstanceState.getSerializable("Saved User");
+
+        }
 
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RegisterUserDialogFragment registerUserDialogFragment = new RegisterUserDialogFragment();
-                registerUserDialogFragment.show(getFragmentManager(), "Register User");
+                //TODO:
+                UserSignInFragment userSignInFragment = new UserSignInFragment();
+                userSignInFragment.show(getFragmentManager(), "User SignIn");
             }
         });
     }
 
     @Override
     public void onRegisterUser(User user) {
+        currentUser = user;
         database = FirebaseDatabase.getInstance().getReference();
         database.child("Users").child(user.getUserName()).setValue(user);
+        signInButton.setText(user.getUserName());
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putSerializable("Saved User", currentUser);
     }
 }
