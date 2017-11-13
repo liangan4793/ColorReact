@@ -1,7 +1,6 @@
 package com.example.andy.colorreact;
 
 import android.app.DialogFragment;
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -13,14 +12,17 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by andy on 07/11/17.
+ * Created by AndyDesk on 11/11/2017.
  */
 
-public class UserSignInFragment extends DialogFragment {
+public class UserSignInDialogFragment extends DialogFragment {
 
-    @BindView(R.id.fragment_user_sign_in_sign_in_button) Button signInButton;
-    @BindView(R.id.fragment_user_sign_in_register_button) Button registerButton;
+    @BindView(R.id.fragment_user_sign_in_register_button)
+    Button registerButton;
+    @BindView(R.id.fragment_user_sign_in_sign_in_button)
+    Button signInButton;
 
+    public UserSignInDialogFragment() {}
 
     @Nullable
     @Override
@@ -28,26 +30,22 @@ public class UserSignInFragment extends DialogFragment {
 
         View view = inflater.inflate(R.layout.fragment_user_sign_in, container);
         ButterKnife.bind(this, view);
-        return inflater.inflate(R.layout.fragment_user_sign_in, container);
+        return view;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        signInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TODO
-            }
-        });
+        ButterKnife.bind(this, view);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 RegisterUserDialogFragment registerUserDialogFragment = new RegisterUserDialogFragment();
                 registerUserDialogFragment.show(getFragmentManager(), "Register User");
+                dismiss();
             }
         });
+
     }
 }

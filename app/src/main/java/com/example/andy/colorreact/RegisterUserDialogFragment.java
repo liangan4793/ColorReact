@@ -38,7 +38,7 @@ public class RegisterUserDialogFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_register_user, container);
         ButterKnife.bind(this, view);
-        return inflater.inflate(R.layout.fragment_register_user, container);
+        return view;
     }
 
     @Override

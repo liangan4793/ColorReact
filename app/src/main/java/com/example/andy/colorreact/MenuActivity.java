@@ -38,8 +38,8 @@ public class MenuActivity extends AppCompatActivity implements RegisterUserDialo
             @Override
             public void onClick(View v) {
                 //TODO:
-                UserSignInFragment userSignInFragment = new UserSignInFragment();
-                userSignInFragment.show(getFragmentManager(), "User SignIn");
+                UserSignInDialogFragment userSignInDialogFragment = new UserSignInDialogFragment();
+                userSignInDialogFragment.show(getFragmentManager(), "User sign in");
             }
         });
     }
