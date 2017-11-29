@@ -1,8 +1,7 @@
 package com.example.andy.colorreact.Model;
 
+import com.google.firebase.auth.FirebaseUser;
 import java.io.Serializable;
-
-import io.realm.RealmObject;
 
 /**
  * Created by andy on 23/10/17.
@@ -10,65 +9,54 @@ import io.realm.RealmObject;
 
 public class User implements Serializable {
 
-    private String firstName;
-    private String lastName;
-    private String userName;
-    private String emailAddress;
-    private String password;
+    //--Constants
+    private static final String NO_FIREBASE_USER = "No Firebase User";
+
+    FirebaseUser user;
     private int highSchore;
+    private boolean isFirebaseUser;
 
     public User() {
-        firstName = null;
-        lastName = null;
+        isFirebaseUser = false;
         highSchore = 0;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUser(FirebaseUser user) {
+        this.user = user;
+        isFirebaseUser = true;
     }
 
     public void setHighSchore(int highSchore) {
         this.highSchore = highSchore;
     }
 
-    public String getUserName() {
-
-        return userName;
-    }
-
-    public String getEmailAddress() {
-        return emailAddress;
-    }
-
-    public String getPassword() {
-        return password;
+    public FirebaseUser getUser() {
+        return user;
     }
 
     public int getHighSchore() {
         return highSchore;
     }
+
+    public boolean containsFirebaseUser() {
+        return isFirebaseUser;
+    }
+
+    public void setIsFirebaseUser(boolean x) {
+        isFirebaseUser = x;
+    }
+
+    public String getDisplayName(){
+        if(user.getDisplayName() != null) {
+            return user.getDisplayName();
+        }
+        else {
+            return getEmail();
+        }
+    }
+
+    public String getEmail(){
+        return user.getEmail();
+    }
+
 }

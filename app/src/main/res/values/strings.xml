@@ -4,4 +4,7 @@
     <string name="settings_label">Settings</string>
     <string name="high_scores_label">High Scores</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

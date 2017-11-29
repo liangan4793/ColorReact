@@ -1,4 +1,4 @@
-package com.example.andy.colorreact;
+package com.example.andy.colorreact.Fragments;
 
 import android.app.DialogFragment;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.example.andy.colorreact.Fragments.RegisterUserDialogFragment;
+import com.example.andy.colorreact.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,6 +33,8 @@ public class UserSignInDialogFragment extends DialogFragment {
 
         View view = inflater.inflate(R.layout.fragment_user_sign_in, container);
         ButterKnife.bind(this, view);
+
+
         return view;
     }
 
@@ -44,6 +49,13 @@ public class UserSignInDialogFragment extends DialogFragment {
                 RegisterUserDialogFragment registerUserDialogFragment = new RegisterUserDialogFragment();
                 registerUserDialogFragment.show(getFragmentManager(), "Register User");
                 dismiss();
+            }
+        });
+
+        signInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 

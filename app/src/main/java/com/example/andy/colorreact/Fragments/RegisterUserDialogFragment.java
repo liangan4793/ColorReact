@@ -1,4 +1,4 @@
-package com.example.andy.colorreact;
+package com.example.andy.colorreact.Fragments;
 
 import android.app.DialogFragment;
 import android.os.Bundle;
@@ -10,27 +10,28 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.andy.colorreact.Model.User;
+import com.example.andy.colorreact.R;
+import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
  * Created by andy on 24/10/17.
+ * Class the register and exisiting goolge acount with a color react account.
  */
 
+
 public class RegisterUserDialogFragment extends DialogFragment {
-    @BindView(R.id.register_fragment_first_name)  EditText firstName;
-    @BindView(R.id.register_fragment_last_name)  EditText lastName;
-    @BindView(R.id.register_fragment_user_name)  EditText userName;
+    @BindView(R.id.register_fragment_user_name)  EditText displayName;
     @BindView(R.id.register_fragment_email_address)  EditText emailAddress;
     @BindView(R.id.register_fragment_password)  EditText password;
     @BindView(R.id.register_fragment_register_button)  Button registerButton;
-    private User newUser;
 
     public RegisterUserDialogFragment() {}
 
     public interface RegisterUserDialogListener {
-        void onRegisterUser(User user);
+        void onRegisterUser(String displayName, String emailAdress, String password);
     }
 
     @Nullable
@@ -45,25 +46,21 @@ public class RegisterUserDialogFragment extends DialogFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
-        newUser = new User();
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registerUser(newUser);
+                registerUser();
             }
         });
 
     }
 
-    private void registerUser(User user) {
-        user.setFirstName(firstName.getText().toString());
-        user.setLastName(lastName.getText().toString());
-        user.setUserName(userName.getText().toString());
-        user.setEmailAddress(emailAddress.getText().toString());
-        user.setPassword(password.getText().toString());
+    private void registerUser() {
 
         RegisterUserDialogListener listener = (RegisterUserDialogListener) getActivity();
-        listener.onRegisterUser(user);
+        listener.onRegisterUser(displayName.getText().toString(),
+                emailAddress.getText().toString(),
+                password.getText().toString());
         dismiss();
     }
 }
