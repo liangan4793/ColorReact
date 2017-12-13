@@ -6,17 +6,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.example.andy.colorreact.Fragments.RegisterUserDialogFragment;
-import com.example.andy.colorreact.Fragments.UserSignInDialogFragment;
-import com.example.andy.colorreact.Fragments.WelcomUserDialogFragment;
 import com.example.andy.colorreact.Model.User;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,7 +40,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(currentUser == null) {
-                    Intent intent = new Intent(getApplicationContext(), GoogleSignInActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), UserSignInActivity.class);
                     startActivityForResult(intent, GET_GOOGLE_USER_REQUEST);
                 }
                 else{
@@ -63,6 +55,12 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == GET_GOOGLE_USER_REQUEST) {
+            if(resultCode == RESULT_OK) {
+                currentUser = (User) data.getExtras().get("User");
+                updateUI(currentUser.getDisplayName());
+            }
+        }
     }
 
     //    @Override

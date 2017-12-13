@@ -1,7 +1,14 @@
 package com.example.andy.colorreact.Utility;
 
+import android.support.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * Created by Andy-m on 2017-11-22.
@@ -9,18 +16,4 @@ import com.google.firebase.database.DatabaseReference;
 
 public class Utility {
 
-    /**
-     * Checks weather or not the user is registered within the color react database.
-     * @param database of users that are registered with ColorReact
-     * @param user that is being checked
-     * @return wheather or not the user is in the database.
-     */
-    private boolean googleAcountCheck(DatabaseReference database, FirebaseUser user){
-        if(database.child("users").child(user.getEmail()) == null){
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
 }

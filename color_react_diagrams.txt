@@ -1,0 +1,27 @@
+Database Structure:
+
+{
+ "Users": {
+           "andyzen619": User()                  
+        .
+	.
+	.
+	.
+	  "linda_hua": User()
+	  }
+}
+
+____________________________________________________________________
+
+
+User Structure:
+
+User() {
+	FirebaseUser firebaseuser;
+	int highscore;
+	Settings settings;
+}
+                         
+                      
+		
+	   	 	
